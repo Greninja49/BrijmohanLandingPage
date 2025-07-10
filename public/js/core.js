@@ -193,7 +193,6 @@ function handleSwipe() {
   }
 }
 
-// Gallery data
 const galleryData = {
   0: {
     main: "/placeholder.svg?height=300&width=400",
@@ -233,11 +232,9 @@ const galleryData = {
   },
 };
 
-// Add click handlers to carousel slides
+// Attach click handlers to slides
 slides.forEach((slide, index) => {
-  slide.addEventListener("click", () => {
-    openGallery(index);
-  });
+  slide.addEventListener("click", () => openGallery(index));
 });
 
 function openGallery(slideIndex) {
@@ -245,34 +242,61 @@ function openGallery(slideIndex) {
   const grid = document.getElementById("galleryGrid");
   const data = galleryData[slideIndex];
 
-  grid.innerHTML = `
-            <img src="${
-              data.main
-            }" alt="Main Image" class="gallery-main w-full h-full object-cover rounded-lg">
-            ${data.thumbs
-              .slice(1)
-              .map(
-                (thumb) =>
-                  `<img src="${thumb}" alt="Gallery Image" class="gallery-thumb w-full h-full object-cover rounded-lg">`
-              )
-              .join("")}
-          `;
+  grid.innerHTML = ""; // clear
+
+  grid.className = "gallery-grid"; // ensure CSS grid is applied
+
+  // Main image
+  const mainImg = document.createElement("img");
+  mainImg.src = data.main;
+  mainImg.alt = "Main Image";
+  mainImg.className =
+    "gallery-main w-full h-full object-contain rounded-lg transition-opacity duration-300";
+  grid.appendChild(mainImg);
+
+  // Thumbnails
+  data.thumbs.forEach((thumbSrc, idx) => {
+    const thumbImg = document.createElement("img");
+    thumbImg.src = thumbSrc;
+    thumbImg.alt = `Gallery Thumbnail ${idx + 1}`;
+    thumbImg.className =
+      "gallery-thumb w-full h-full object-cover rounded-md border-2 border-transparent hover:opacity-80 cursor-pointer transition";
+    thumbImg.addEventListener("click", () => {
+      mainImg.style.opacity = 0.5;
+      setTimeout(() => {
+        mainImg.src = thumbSrc;
+        mainImg.style.opacity = 1;
+      }, 150);
+
+      // Highlight active thumb
+      grid.querySelectorAll(".gallery-thumb").forEach((el) => {
+        el.classList.remove("border-blue-500");
+      });
+      thumbImg.classList.add("border-blue-500");
+    });
+    grid.appendChild(thumbImg);
+  });
 
   modal.classList.add("active");
+  modal.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
 }
 
 function closeGallery() {
   const modal = document.getElementById("galleryModal");
   modal.classList.remove("active");
+  modal.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "auto";
 }
 
-// Close gallery on outside click
 document.getElementById("galleryModal").addEventListener("click", (e) => {
   if (e.target.id === "galleryModal") {
     closeGallery();
   }
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeGallery();
 });
 
 // Initialize hero carousel

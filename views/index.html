@@ -70,27 +70,29 @@
       >
         <a
           href="#home"
-          class="hover:text-yellow-600 transition-colors duration-300"
+          class="text-yellow-500 hover:text-yellow-600 transition-colors duration-300"
           >Home</a
         >
-        <a
-          href="#services"
-          class="hover:text-yellow-600 transition-colors duration-300"
-          >Services</a
-        >
+        <div class="hidden sm:block">
+          <a
+            href="#services"
+            class="text-yellow-500 hover:text-yellow-600 transition-colors duration-300"
+            >Services</a
+          >
+        </div>
         <a
           href="#gallery"
-          class="hover:text-yellow-600 transition-colors duration-300"
+          class="text-yellow-500 hover:text-yellow-600 transition-colors duration-300"
           >Gallery</a
         >
         <a
           href="#about"
-          class="hover:text-yellow-600 transition-colors duration-300"
+          class="text-yellow-500 hover:text-yellow-600 transition-colors duration-300"
           >About</a
         >
         <a
           href="#contact"
-          class="hover:text-yellow-600 transition-colors duration-300"
+          class="text-yellow-500 hover:text-yellow-600 transition-colors duration-300"
           >Contact</a
         >
       </div>
@@ -108,63 +110,51 @@
         <div class="hero-bg-slide"></div>
         <div class="hero-bg-slide"></div>
       </div>
-
-      <div class="absolute inset-0 opacity-10 elegant-bg">
-        <div
-          class="absolute top-20 left-20 w-72 h-72 bg-yellow-100 rounded-full animate-float"
-        ></div>
-        <div
-          class="absolute bottom-20 right-20 w-96 h-96 bg-gray-100 rounded-full animate-float-delayed"
-        ></div>
-        <div
-          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-yellow-50 rounded-full animate-float"
-        ></div>
-      </div>
-
-      <div class="container mx-auto px-6 text-center relative z-10">
+      <div
+        class="container mx-auto px-6 text-center relative z-10 pt-20 sm:pt-2"
+      >
         <div class="animate-slide-up">
-          <div class="text-6xl md:text-8xl mb-6 gold-accent">
-            <i class="fas fa-building"></i>
-          </div>
-          <h1
-            class="text-4xl md:text-6xl font-bold mb-6 text-gray-900 elegant-font"
-          >
-            Brijmohan Munjal
-            <span class="block text-3xl md:text-5xl mt-4 gold-accent"
-              >Vedic Kendra Auditorium</span
-            >
-          </h1>
-          <p
-            class="text-xl md:text-2xl mb-4 max-w-3xl mx-auto opacity-90 text-gray-600"
-          >
-            Premier Event Venue in Kailash Colony, Delhi
-          </p>
-          <div class="flex items-center justify-center mb-8 space-x-2">
-            <div class="flex star-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
+          <div class="bg-black bg-opacity-50 rounded-2xl p-6">
+            <div class="text-6xl md:text-8xl mb-6 gold-accent hidden sm:block">
+              <i class="fas fa-building"></i>
             </div>
-            <span class="text-lg font-semibold text-gold">4.5/5</span>
-            <span class="text-gray-600">(77 Reviews)</span>
-          </div>
-          <p class="text-lg mb-8 max-w-2xl mx-auto opacity-80 text-gray-600">
-            Serving the community since August 2023 with sophistication and
-            comfort for all your special events
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              class="glass px-8 py-4 rounded-full hover-glow transition-all duration-300 font-semibold"
+            <h1
+              class="text-4xl md:text-6xl font-bold mb-6 text-white elegant-font"
             >
-              <i class="fas fa-calendar-check mr-2"></i>Book Your Event
-            </button>
-            <button
-              class="glass-dark px-8 py-4 rounded-full hover-glow transition-all duration-300 font-semibold"
+              Brijmohan Munjal
+              <span class="block text-3xl md:text-5xl mt-4 gold-accent">
+                Vedic Kendra Auditorium
+              </span>
+            </h1>
+            <p
+              class="text-xl md:text-2xl mb-4 max-w-3xl mx-auto opacity-90 text-white"
             >
-              <i class="fas fa-images mr-2"></i>View Gallery
-            </button>
+              Premier Event Venue in Kailash Colony, Delhi
+            </p>
+            <div class="flex items-center justify-center mb-8 space-x-2">
+              <div class="flex star-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <span class="text-lg font-semibold text-gold">4.5/5</span>
+              <span class="text-white">(77 Reviews)</span>
+            </div>
+            <p class="text-lg mb-8 max-w-2xl mx-auto opacity-80 text-white">
+              Serving the community since August 2023 with sophistication and
+              comfort for all your special events
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="#contact"
+                class="glass px-8 py-4 rounded-full hover-glow transition-all duration-300 font-semibold bg-red-500"
+              >
+                <i class="fas fa-calendar-check mr-2 text-white"></i>
+                <span class="text-white">Book Your Event</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -177,7 +167,7 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-12 relative">
+    <section id="services" class="py-12 relative hidden sm:block">
       <div class="container mx-auto px-6">
         <div class="text-center mb-16 animate-slide-up">
           <h2
@@ -198,89 +188,31 @@
             <div
               class="gradient-bg w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
             >
-              <i class="fas fa-wheelchair text-2xl text-white"></i>
+              <i class="fas fa-theater-masks text-2xl text-white"></i>
             </div>
             <h3 class="text-2xl font-bold mb-4 text-gray-800 elegant-font">
-              Accessibility Features
+              Cultural & Artistic Events
             </h3>
-            <p class="opacity-90 mb-6 text-gray-600">
-              Complete accessibility with wheelchair-friendly facilities for all
-              guests.
-            </p>
             <ul class="space-y-2 opacity-80 text-gray-600">
               <li>
-                <i class="fas fa-check mr-2 text-yellow-600"></i>Wheelchair
-                Accessible Entrance
+                <i class="fas fa-check mr-2 text-yellow-600"></i>
+                Theatre performances
               </li>
               <li>
-                <i class="fas fa-check mr-2 text-yellow-600"></i>Wheelchair
-                Accessible Exit
+                <i class="fas fa-check mr-2 text-yellow-600"></i>
+                Dance recitals
               </li>
               <li>
-                <i class="fas fa-check mr-2 text-yellow-600"></i>Accessible Car
-                Parking
-              </li>
-            </ul>
-          </div>
-
-          <div
-            class="glass rounded-3xl p-8 hover-glow transition-all duration-300 animate-slide-up"
-          >
-            <div
-              class="gradient-bg-2 w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
-            >
-              <i class="fas fa-utensils text-2xl text-gray-700"></i>
-            </div>
-            <h3 class="text-2xl font-bold mb-4 text-gray-800 elegant-font">
-              Catering Services
-            </h3>
-            <p class="opacity-90 mb-6 text-gray-600">
-              Flexible catering options to suit your event's culinary
-              requirements.
-            </p>
-            <ul class="space-y-2 opacity-80 text-gray-600">
-              <li>
-                <i class="fas fa-check mr-2 text-yellow-600"></i>In-House
-                Catering Available
+                <i class="fas fa-check mr-2 text-yellow-600"></i>
+                Music concerts
               </li>
               <li>
-                <i class="fas fa-check mr-2 text-yellow-600"></i>Outside Caterer
-                Allowed
+                <i class="fas fa-check mr-2 text-yellow-600"></i>
+                Film screenings
               </li>
               <li>
-                <i class="fas fa-times mr-2 text-red-500"></i>Non-Veg Food Not
-                Allowed
-              </li>
-            </ul>
-          </div>
-
-          <div
-            class="glass rounded-3xl p-8 hover-glow transition-all duration-300 animate-slide-up"
-          >
-            <div
-              class="gradient-bg-3 w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
-            >
-              <i class="fas fa-music text-2xl text-gray-700"></i>
-            </div>
-            <h3 class="text-2xl font-bold mb-4 text-gray-800 elegant-font">
-              Entertainment Services
-            </h3>
-            <p class="opacity-90 mb-6 text-gray-600">
-              Professional DJ services to keep your guests entertained
-              throughout the event.
-            </p>
-            <ul class="space-y-2 opacity-80 text-gray-600">
-              <li>
-                <i class="fas fa-check mr-2 text-yellow-600"></i>In-House DJ
-                Available
-              </li>
-              <li>
-                <i class="fas fa-check mr-2 text-yellow-600"></i>Outside DJ
-                Permitted
-              </li>
-              <li>
-                <i class="fas fa-check mr-2 text-yellow-600"></i>Sound System
-                Included
+                <i class="fas fa-check mr-2 text-yellow-600"></i>
+                Art shows or exhibitions
               </li>
             </ul>
           </div>
@@ -291,27 +223,31 @@
             <div
               class="gradient-bg w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
             >
-              <i class="fas fa-heart text-2xl text-white"></i>
+              <i class="fas fa-graduation-cap text-2xl text-white"></i>
             </div>
             <h3 class="text-2xl font-bold mb-4 text-gray-800 elegant-font">
-              Wedding Celebrations
+              Educational Activities
             </h3>
-            <p class="opacity-90 mb-6 text-gray-600">
-              Perfect venue for wedding ceremonies and receptions with elegant
-              ambiance.
-            </p>
             <ul class="space-y-2 opacity-80 text-gray-600">
               <li>
-                <i class="fas fa-check mr-2 text-yellow-600"></i>Bridal Suite
-                Available
+                <i class="fas fa-check mr-2 text-yellow-600"></i>School/college
+                annual days
               </li>
               <li>
-                <i class="fas fa-check mr-2 text-yellow-600"></i>Decoration
-                Services
+                <i class="fas fa-check mr-2 text-yellow-600"></i>Graduation
+                ceremonies
               </li>
               <li>
-                <i class="fas fa-check mr-2 text-yellow-600"></i>Photography
-                Support
+                <i class="fas fa-check mr-2 text-yellow-600"></i>Workshops and
+                training sessions
+              </li>
+              <li>
+                <i class="fas fa-check mr-2 text-yellow-600"></i>Educational
+                seminars or lectures
+              </li>
+              <li>
+                <i class="fas fa-check mr-2 text-yellow-600"></i>Debates,
+                elocutions or quiz competitions
               </li>
             </ul>
           </div>
@@ -320,29 +256,28 @@
             class="glass rounded-3xl p-8 hover-glow transition-all duration-300 animate-slide-up"
           >
             <div
-              class="gradient-bg-2 w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
+              class="gradient-bg w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
             >
-              <i class="fas fa-birthday-cake text-2xl text-gray-700"></i>
+              <i class="fas fa-person-praying text-2xl text-white"></i>
             </div>
             <h3 class="text-2xl font-bold mb-4 text-gray-800 elegant-font">
-              Birthday Parties
+              Spiritual & Wellness Programs
             </h3>
-            <p class="opacity-90 mb-6 text-gray-600">
-              Memorable birthday celebrations for all ages in a sophisticated
-              setting.
-            </p>
             <ul class="space-y-2 opacity-80 text-gray-600">
               <li>
-                <i class="fas fa-check mr-2 text-yellow-600"></i>Theme
-                Decorations
+                <i class="fas fa-check mr-2 text-yellow-600"></i>Meditation
+                sessions
               </li>
               <li>
-                <i class="fas fa-check mr-2 text-yellow-600"></i>Entertainment
-                Setup
+                <i class="fas fa-check mr-2 text-yellow-600"></i>Spiritual
+                discourses or satsangs
               </li>
               <li>
-                <i class="fas fa-check mr-2 text-yellow-600"></i>Cake Cutting
-                Area
+                <i class="fas fa-check mr-2 text-yellow-600"></i>Yoga workshops
+              </li>
+              <li>
+                <i class="fas fa-check mr-2 text-yellow-600"></i>Wellness
+                retreats or talks
               </li>
             </ul>
           </div>
@@ -351,28 +286,97 @@
             class="glass rounded-3xl p-8 hover-glow transition-all duration-300 animate-slide-up"
           >
             <div
-              class="gradient-bg-3 w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
+              class="gradient-bg w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
             >
-              <i class="fas fa-briefcase text-2xl text-gray-700"></i>
+              <i class="fas fa-briefcase text-2xl text-white"></i>
             </div>
             <h3 class="text-2xl font-bold mb-4 text-gray-800 elegant-font">
-              Corporate Events
+              Corporate & Business Events
             </h3>
-            <p class="opacity-90 mb-6 text-gray-600">
-              Professional corporate event hosting with modern amenities and
-              facilities.
-            </p>
             <ul class="space-y-2 opacity-80 text-gray-600">
               <li>
-                <i class="fas fa-check mr-2 text-yellow-600"></i>AV Equipment
+                <i class="fas fa-check mr-2 text-yellow-600"></i>Conferences and
+                symposiums
               </li>
               <li>
-                <i class="fas fa-check mr-2 text-yellow-600"></i>Business
-                Catering
+                <i class="fas fa-check mr-2 text-yellow-600"></i>Product
+                launches
               </li>
               <li>
-                <i class="fas fa-check mr-2 text-yellow-600"></i>Parking
-                Facilities
+                <i class="fas fa-check mr-2 text-yellow-600"></i>Panel
+                discussions
+              </li>
+              <li>
+                <i class="fas fa-check mr-2 text-yellow-600"></i>Annual general
+                meetings (AGMs)
+              </li>
+              <li>
+                <i class="fas fa-check mr-2 text-yellow-600"></i>Team-building
+                or motivational events
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="glass rounded-3xl p-8 hover-glow transition-all duration-300 animate-slide-up"
+          >
+            <div
+              class="gradient-bg w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-champagne-glasses text-2xl text-white"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-gray-800 elegant-font">
+              Personal or Social Functions
+            </h3>
+            <ul class="space-y-2 opacity-80 text-gray-600">
+              <li>
+                <i class="fas fa-check mr-2 text-yellow-600"></i>Award functions
+                or felicitation events
+              </li>
+              <li>
+                <i class="fas fa-check mr-2 text-yellow-600"></i>Community
+                gatherings or reunions
+              </li>
+              <li>
+                <i class="fas fa-check mr-2 text-yellow-600"></i>Prayer Meetings
+              </li>
+              <li>
+                <i class="fas fa-check mr-2 text-yellow-600"></i>Shanti path
+              </li>
+              <li>
+                <i class="fas fa-check mr-2 text-yellow-600"></i>Funeral
+                services
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="glass rounded-3xl p-8 hover-glow transition-all duration-300 animate-slide-up"
+          >
+            <div
+              class="gradient-bg w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-video text-2xl text-white"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-gray-800 elegant-font">
+              Media & Recording
+            </h3>
+            <ul class="space-y-2 opacity-80 text-gray-600">
+              <li>
+                <i class="fas fa-check mr-2 text-yellow-600"></i>TV show or web
+                series filming
+              </li>
+              <li>
+                <i class="fas fa-check mr-2 text-yellow-600"></i>Podcast
+                recordings
+              </li>
+              <li>
+                <i class="fas fa-check mr-2 text-yellow-600"></i>Studio-style
+                interviews
+              </li>
+              <li>
+                <i class="fas fa-check mr-2 text-yellow-600"></i>Documentary
+                shooting or press conferences
               </li>
             </ul>
           </div>
@@ -396,7 +400,7 @@
         </div>
 
         <div class="carousel-container relative max-w-6xl mx-auto">
-          <div class="relative h-96 md:h-[500px] overflow-hidden rounded-3xl">
+          <div class="relative h-96 md:h-[300px] overflow-hidden rounded-3xl">
             <!-- Carousel Slides -->
             <div class="carousel-slide absolute inset-0 active">
               <div
@@ -640,7 +644,9 @@
               </div>
             </div>
 
-            <p class="text-lg md:text-xl opacity-90 mb-6 text-gray-600">
+            <p
+              class="text-lg md:text-xl opacity-90 mb-6 text-gray-600 text-center sm:text-left"
+            >
               Brijmohan Munjal Vedic Kendra Auditorium has been serving the
               community for many years as a leading venue in Kailash Colony,
               Delhi. Conveniently located near Summer Fields School, our banquet
@@ -679,7 +685,7 @@
     </section>
 
     <!-- Booking Information Section -->
-    <section class="py-12 relative">
+    <section class="py-12 relative hidden sm:block">
       <div class="container mx-auto px-6">
         <div class="text-center mb-16 animate-slide-up">
           <h2
