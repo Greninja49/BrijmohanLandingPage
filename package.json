@@ -3,17 +3,26 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "serve": "tsc --watch",
+    "start": "node dist/app.js",
+    "dev-watch": "nodemon dist/app.js",
+    "dev": "concurrently \"tsc --watch\" \"nodemon --watch dist dist/app.js\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "concurrently": "^9.2.0",
+    "nodemon": "^3.1.10",
     "typescript": "^5.8.3"
   },
   "dependencies": {
+    "@types/express": "^5.0.3",
     "env": "^0.0.2",
-    "nodemailer": "^7.0.5"
+    "express": "^5.1.0",
+    "nodemailer": "^7.0.5",
+    "router": "^2.2.0"
   }
 }
