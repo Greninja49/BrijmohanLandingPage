@@ -1,0 +1,304 @@
+// Mobile menu toggle
+const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+const mobileMenu = document.getElementById("mobile-menu");
+
+mobileMenuBtn.addEventListener("click", () => {
+  mobileMenu.classList.toggle("-translate-x-full");
+});
+
+// Close mobile menu when clicking on links
+mobileMenu.addEventListener("click", (e) => {
+  if (e.target.tagName === "A") {
+    mobileMenu.classList.add("-translate-x-full");
+  }
+});
+
+// Navbar scroll effect
+window.addEventListener("scroll", () => {
+  const navbar = document.getElementById("navbar");
+  if (window.scrollY > 100) {
+    navbar.classList.add("backdrop-blur-xl");
+  } else {
+    navbar.classList.remove("backdrop-blur-xl");
+  }
+});
+
+// Carousel functionality
+let currentSlide = 0;
+const slides = document.querySelectorAll(".carousel-slide");
+const indicators = document.querySelectorAll(".indicator");
+const totalSlides = slides.length;
+
+function updateCarousel() {
+  slides.forEach((slide, index) => {
+    slide.classList.remove("active", "prev", "next", "hidden");
+
+    if (index === currentSlide) {
+      slide.classList.add("active");
+    } else if (index === (currentSlide - 1 + totalSlides) % totalSlides) {
+      slide.classList.add("prev");
+    } else if (index === (currentSlide + 1) % totalSlides) {
+      slide.classList.add("next");
+    } else {
+      slide.classList.add("hidden");
+    }
+  });
+
+  indicators.forEach((indicator, index) => {
+    indicator.classList.toggle("active", index === currentSlide);
+  });
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % totalSlides;
+  updateCarousel();
+}
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+  updateCarousel();
+}
+
+// Carousel controls
+document.getElementById("nextBtn").addEventListener("click", nextSlide);
+document.getElementById("prevBtn").addEventListener("click", prevSlide);
+
+// Indicator controls
+indicators.forEach((indicator, index) => {
+  indicator.addEventListener("click", () => {
+    currentSlide = index;
+    updateCarousel();
+  });
+});
+
+// Auto-play carousel
+setInterval(nextSlide, 6000);
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  });
+});
+
+// Intersection Observer for animations
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: "0px 0px -50px 0px",
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.style.animationDelay = "0s";
+      entry.target.classList.add("animate-slide-up");
+    }
+  });
+}, observerOptions);
+
+// Observe elements for animation
+document.querySelectorAll(".animate-slide-up").forEach((el) => {
+  observer.observe(el);
+});
+
+// Form submission
+document.querySelector("form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  alert(
+    "Thank you for your booking request! We will contact you shortly to confirm the details."
+  );
+});
+
+// Initialize carousel
+updateCarousel();
+
+// Hero carousel functionality
+let currentHeroSlide = 0;
+const heroSlides = document.querySelectorAll(".hero-carousel-slide");
+const totalHeroSlides = heroSlides.length;
+
+function updateHeroCarousel() {
+  heroSlides.forEach((slide, index) => {
+    slide.classList.remove("active", "prev", "next", "hidden");
+
+    if (index === currentHeroSlide) {
+      slide.classList.add("active");
+    } else if (
+      index ===
+      (currentHeroSlide - 1 + totalHeroSlides) % totalHeroSlides
+    ) {
+      slide.classList.add("prev");
+    } else if (index === (currentHeroSlide + 1) % totalHeroSlides) {
+      slide.classList.add("next");
+    } else {
+      slide.classList.add("hidden");
+    }
+  });
+}
+
+function nextHeroSlide() {
+  currentHeroSlide = (currentHeroSlide + 1) % totalHeroSlides;
+  updateHeroCarousel();
+}
+
+// Auto-play hero carousel
+setInterval(nextHeroSlide, 4000);
+
+// Enhanced touch controls for main carousel
+let startX = 0;
+let endX = 0;
+let startY = 0;
+let endY = 0;
+
+const carouselContainer = document.querySelector(".carousel-container");
+
+carouselContainer.addEventListener(
+  "touchstart",
+  (e) => {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+  },
+  { passive: true }
+);
+
+carouselContainer.addEventListener(
+  "touchend",
+  (e) => {
+    endX = e.changedTouches[0].clientX;
+    endY = e.changedTouches[0].clientY;
+    handleSwipe();
+  },
+  { passive: true }
+);
+
+function handleSwipe() {
+  const threshold = 50;
+  const diffX = startX - endX;
+  const diffY = startY - endY;
+
+  // Only handle horizontal swipes
+  if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > threshold) {
+    if (diffX > 0) {
+      nextSlide();
+    } else {
+      prevSlide();
+    }
+  }
+}
+
+// Gallery data
+const galleryData = {
+  0: {
+    main: "/placeholder.svg?height=300&width=400",
+    thumbs: [
+      "/placeholder.svg?height=300&width=400",
+      "/images/auditorium.png",
+      "/images/wedding.jpg",
+      "/images/funeral.jpg",
+    ],
+  },
+  1: {
+    main: "/images/wedding.jpg",
+    thumbs: [
+      "/images/wedding.jpg",
+      "/placeholder.svg?height=300&width=400",
+      "/images/auditorium.png",
+      "/images/funeral.jpg",
+    ],
+  },
+  2: {
+    main: "/placeholder.svg?height=300&width=400",
+    thumbs: [
+      "/placeholder.svg?height=300&width=400",
+      "/placeholder.svg?height=300&width=400",
+      "/images/wedding.jpg",
+      "/images/auditorium.png",
+    ],
+  },
+  3: {
+    main: "/images/funeral.jpg",
+    thumbs: [
+      "/images/funeral.jpg",
+      "/placeholder.svg?height=300&width=400",
+      "/images/wedding.jpg",
+      "/images/auditorium.png",
+    ],
+  },
+};
+
+// Add click handlers to carousel slides
+slides.forEach((slide, index) => {
+  slide.addEventListener("click", () => {
+    openGallery(index);
+  });
+});
+
+function openGallery(slideIndex) {
+  const modal = document.getElementById("galleryModal");
+  const grid = document.getElementById("galleryGrid");
+  const data = galleryData[slideIndex];
+
+  grid.innerHTML = `
+            <img src="${
+              data.main
+            }" alt="Main Image" class="gallery-main w-full h-full object-cover rounded-lg">
+            ${data.thumbs
+              .slice(1)
+              .map(
+                (thumb) =>
+                  `<img src="${thumb}" alt="Gallery Image" class="gallery-thumb w-full h-full object-cover rounded-lg">`
+              )
+              .join("")}
+          `;
+
+  modal.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function closeGallery() {
+  const modal = document.getElementById("galleryModal");
+  modal.classList.remove("active");
+  document.body.style.overflow = "auto";
+}
+
+// Close gallery on outside click
+document.getElementById("galleryModal").addEventListener("click", (e) => {
+  if (e.target.id === "galleryModal") {
+    closeGallery();
+  }
+});
+
+// Initialize hero carousel
+updateHeroCarousel();
+
+// Hero background carousel functionality
+let currentHeroBgSlide = 0;
+const heroBgSlides = document.querySelectorAll(".hero-bg-slide");
+const totalHeroBgSlides = heroBgSlides.length;
+
+function updateHeroBgCarousel() {
+  heroBgSlides.forEach((slide, index) => {
+    slide.classList.remove("active");
+    if (index === currentHeroBgSlide) {
+      slide.classList.add("active");
+    }
+  });
+}
+
+function nextHeroBgSlide() {
+  currentHeroBgSlide = (currentHeroBgSlide + 1) % totalHeroBgSlides;
+  updateHeroBgCarousel();
+}
+
+// Auto-play hero background carousel
+setInterval(nextHeroBgSlide, 5000);
+
+// Initialize hero background carousel
+updateHeroBgCarousel();
