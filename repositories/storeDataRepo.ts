@@ -8,6 +8,40 @@ const db = mysql.createPool({
   password: process.env.DB_PASS,
   database: process.env.DB_NAME,
 });
+// async function initDB() {
+//   const conn = await db.getConnection();
+//   try {
+//     console.log("✅ Connected to MySQL server");
+
+//     // Create DB if not exists
+//     await conn.query(`CREATE DATABASE IF NOT EXISTS eventdb`);
+//     await conn.query(`USE eventdb`);
+
+//     // Create table if not exists
+//     await conn.query(`
+//       CREATE TABLE IF NOT EXISTS bookings (
+//         id INT AUTO_INCREMENT PRIMARY KEY,
+//         name VARCHAR(100),
+//         phone VARCHAR(20),
+//         email VARCHAR(100),
+//         event_type VARCHAR(50),
+//         event_date DATE,
+//         guest_count INT,
+//         requirements TEXT,
+//         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+//       )
+//     `);
+
+//     console.log("✅ Database and table ready");
+//   } finally {
+//     conn.release();
+//   }
+// }
+
+// // Call it once at startup
+// initDB().catch((err) => {
+//   console.error("❌ Failed to initialize database:", err);
+// });
 
 db.getConnection()
   .then((conn) => {
