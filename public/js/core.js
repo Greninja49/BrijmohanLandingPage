@@ -127,7 +127,6 @@ document.addEventListener("DOMContentLoaded", () => {
       requirements: formData.get("requirements").trim(),
     };
 
-    // clear all previous errors
     ["name", "phone", "email", "eventDate", "guestCount"].forEach((field) => {
       const errDiv = document.getElementById(`error-${field}`);
       if (errDiv) errDiv.textContent = "";
@@ -152,7 +151,6 @@ document.addEventListener("DOMContentLoaded", () => {
           });
         }
       } else {
-        // Success — redirect or show message
         form.reset();
 
         alert("Booking submitted successfully!");
@@ -230,7 +228,6 @@ function handleSwipe() {
   const diffX = startX - endX;
   const diffY = startY - endY;
 
-  // Only handle horizontal swipes
   if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > threshold) {
     if (diffX > 0) {
       nextSlide();
@@ -279,7 +276,6 @@ const galleryData = {
   },
 };
 
-// Attach click handlers to slides
 slides.forEach((slide, index) => {
   slide.addEventListener("click", () => openGallery(index));
 });
@@ -289,11 +285,10 @@ function openGallery(slideIndex) {
   const grid = document.getElementById("galleryGrid");
   const data = galleryData[slideIndex];
 
-  grid.innerHTML = ""; // clear
+  grid.innerHTML = "";
 
-  grid.className = "gallery-grid"; // ensure CSS grid is applied
+  grid.className = "gallery-grid";
 
-  // Main image
   const mainImg = document.createElement("img");
   mainImg.src = data.main;
   mainImg.alt = "Main Image";
@@ -301,7 +296,6 @@ function openGallery(slideIndex) {
     "gallery-main w-full h-full object-contain rounded-lg transition-opacity duration-300";
   grid.appendChild(mainImg);
 
-  // Thumbnails
   data.thumbs.forEach((thumbSrc, idx) => {
     const thumbImg = document.createElement("img");
     thumbImg.src = thumbSrc;
@@ -315,7 +309,6 @@ function openGallery(slideIndex) {
         mainImg.style.opacity = 1;
       }, 150);
 
-      // Highlight active thumb
       grid.querySelectorAll(".gallery-thumb").forEach((el) => {
         el.classList.remove("border-blue-500");
       });

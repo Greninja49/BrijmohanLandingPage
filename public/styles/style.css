@@ -227,7 +227,7 @@
 }
 
 .gallery-thumb.border-blue-500 {
-  border-color: #3b82f6; /* Tailwind blue-500 */
+  border-color: #3b82f6;
   border-width: 2px;
 }
 
@@ -244,22 +244,22 @@
   }
 }
 section {
-  padding: 40px 0; /* Reduced from 60px */
+  padding: 40px 0;
 }
 
 @media (max-width: 768px) {
   section {
-    padding: 24px 0; /* Reduced from 40px */
+    padding: 24px 0;
   }
 }
 
 .carousel-slide .glass {
-  padding: 20px; /* Reduced from 32px (p-8) */
+  padding: 20px;
 }
 
 @media (max-width: 768px) {
   .carousel-slide .glass {
-    padding: 16px; /* Further reduced for mobile */
+    padding: 16px;
   }
 }
 

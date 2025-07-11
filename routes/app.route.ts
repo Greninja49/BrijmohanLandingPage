@@ -11,7 +11,7 @@ router.get("/", (req: Request, res: Response) => {
 router.post("/submit", async (req, res) => {
   const { name, phone, email, eventDate, guestCount } = req.body;
 
-  const errors: Record<string, string> = {}; // key → field name
+  const errors: Record<string, string> = {};
 
   if (!/^[a-zA-Z\s]+$/.test(name)) {
     errors.name = "Name must only contain letters.";
