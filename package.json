@@ -14,6 +14,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/nodemailer": "^6.4.17",
     "concurrently": "^9.2.0",
     "nodemon": "^3.1.10",
     "typescript": "^5.8.3"
@@ -23,7 +24,9 @@
     "dotenv": "^17.2.0",
     "env": "^0.0.2",
     "express": "^5.1.0",
+    "mysql2": "^3.14.2",
     "nodemailer": "^7.0.5",
+    "promise": "^8.3.0",
     "router": "^2.2.0"
   }
 }

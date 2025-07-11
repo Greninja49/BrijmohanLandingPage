@@ -109,11 +109,58 @@ document.querySelectorAll(".animate-slide-up").forEach((el) => {
 });
 
 // Form submission
-document.querySelector("form").addEventListener("submit", (e) => {
-  e.preventDefault();
-  alert(
-    "Thank you for your booking request! We will contact you shortly to confirm the details."
-  );
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector("form");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    const payload = {
+      name: formData.get("name").trim(),
+      phone: formData.get("phone").trim(),
+      email: formData.get("email").trim(),
+      eventType: formData.get("eventType"),
+      eventDate: formData.get("eventDate"),
+      guestCount: formData.get("guestCount").trim(),
+      requirements: formData.get("requirements").trim(),
+    };
+
+    // clear all previous errors
+    ["name", "phone", "email", "eventDate", "guestCount"].forEach((field) => {
+      const errDiv = document.getElementById(`error-${field}`);
+      if (errDiv) errDiv.textContent = "";
+    });
+
+    try {
+      const response = await fetch("/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+
+        if (data.errors) {
+          Object.entries(data.errors).forEach(([field, message]) => {
+            const errDiv = document.getElementById(`error-${field}`);
+            if (errDiv) errDiv.textContent = message;
+          });
+        }
+      } else {
+        // Success — redirect or show message
+        form.reset();
+
+        alert("Booking submitted successfully!");
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  });
 });
 
 // Initialize carousel
