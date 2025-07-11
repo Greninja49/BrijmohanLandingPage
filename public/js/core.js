@@ -239,39 +239,39 @@ function handleSwipe() {
 
 const galleryData = {
   0: {
-    main: "/placeholder.svg?height=300&width=400",
+    main: "/images/eventgallery/auditorium/audi4.jpg",
     thumbs: [
-      "/placeholder.svg?height=300&width=400",
-      "/images/auditorium.png",
-      "/images/wedding.jpg",
-      "/images/funeral.jpg",
+      "/images/eventgallery/auditorium/audi4.jpg",
+      "/images/eventgallery/auditorium/audi1.jpg",
+      "/images/eventgallery/auditorium/audi2.jpg",
+      "/images/eventgallery/auditorium/audi3.jpg",
     ],
   },
   1: {
-    main: "/images/wedding.jpg",
+    main: "/images/eventgallery/confrence/con3.jpg",
     thumbs: [
-      "/images/wedding.jpg",
-      "/placeholder.svg?height=300&width=400",
-      "/images/auditorium.png",
-      "/images/funeral.jpg",
+      "/images/eventgallery/confrence/con3.jpg",
+      "/images/eventgallery/confrence/con2.jpg",
+      "/images/eventgallery/confrence/con1.jpg",
+      "/images/eventgallery/confrence/con4.jpg",
     ],
   },
   2: {
-    main: "/placeholder.svg?height=300&width=400",
+    main: "/images/eventgallery/prayerroom/prayer1.jpg",
     thumbs: [
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/images/wedding.jpg",
-      "/images/auditorium.png",
+      "/images/eventgallery/prayerroom/prayer1.jpg",
+      "/images/eventgallery/prayerroom/prayer2.jpg",
+      "/images/eventgallery/prayerroom/prayer3.jpg",
+      "/images/eventgallery/prayerroom/prayer4.jpg",
     ],
   },
   3: {
-    main: "/images/funeral.jpg",
+    main: "/images/eventgallery/amenities/ameni4.jpg",
     thumbs: [
-      "/images/funeral.jpg",
-      "/placeholder.svg?height=300&width=400",
-      "/images/wedding.jpg",
-      "/images/auditorium.png",
+      "/images/eventgallery/amenities/ameni4.jpg",
+      "/images/eventgallery/amenities/ameni1.jpg",
+      "/images/eventgallery/amenities/ameni2.jpg",
+      "/images/eventgallery/amenities/ameni3.jpg",
     ],
   },
 };

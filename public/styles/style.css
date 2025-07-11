@@ -289,14 +289,22 @@ section {
   opacity: 1;
 }
 
-.hero-bg-slide:nth-child(1) {
+.hero-bg-slide:nth-child(2) {
   background-image: url("/images/topcarousel/carousel1.jpg");
 }
 
-.hero-bg-slide:nth-child(2) {
+.hero-bg-slide:nth-child(4) {
   background-image: url("/images/topcarousel/carousel2.jpg");
 }
 
-.hero-bg-slide:nth-child(3) {
+.hero-bg-slide:nth-child(5) {
   background-image: url("/images/topcarousel/carousel3.jpg");
+}
+
+.hero-bg-slide:nth-child(3) {
+  background-image: url("/images/topcarousel/carousel4.jpg");
+}
+
+.hero-bg-slide:nth-child(1) {
+  background-image: url("/images/topcarousel/carousel5.jpg");
 }
