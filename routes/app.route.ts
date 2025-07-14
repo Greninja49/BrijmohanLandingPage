@@ -8,6 +8,10 @@ router.get("/", (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, "../../views/index.html"));
 });
 
+router.get("/thankyou", (req: Request, res: Response) => {
+  res.sendFile(path.join(__dirname, "../../views/thankyou.html"));
+});
+
 router.post("/submit", async (req, res) => {
   const { name, phone, email, eventDate, guestCount } = req.body;
 
@@ -39,11 +43,15 @@ router.post("/submit", async (req, res) => {
 
   try {
     await Promise.all([handleBooking(req.body), storeBooking(req.body)]);
-    res.status(200).json({ success: true, redirect: "/#contact" });
+    res.status(200).json({ success: true, redirect: "/thankyou" });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Something went wrong." });
   }
+});
+
+router.use((req, res) => {
+  res.redirect("/");
 });
 
 export default router;
