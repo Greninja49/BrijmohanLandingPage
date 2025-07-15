@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         form.reset();
 
-        alert("Booking submitted successfully!");
+        window.location.href = "/thankyou";
       }
     } catch (err) {
       console.error(err);
