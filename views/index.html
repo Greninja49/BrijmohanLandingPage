@@ -12,6 +12,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
     />
+    <link rel="icon" type="image/png" href="/images/logos/bmvk.png" />
     <link rel="stylesheet" href="/styles/style.css" />
   </head>
   <body class="bg-white min-h-screen text-dark overflow-x-hidden">
@@ -22,11 +23,14 @@
     >
       <div class="container mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
-          <div class="flex text-2xl font-bold text-gray-800 elegant-font">
-            <i
-              class="fas fa-building gold-accent mr-2 justify-center sm:justify-start"
-            ></i
-            ><span class="hidden sm:block">Brijmohan Munjal Vedic Kendra</span>
+          <div
+            class="flex text-2xl font-bold text-gray-800 elegant-font justify-center items-center"
+          >
+            <img
+              src="/images/logos/bmvk.png"
+              alt="Brijmohan Munjal Vedic Kendra logo"
+              class="h-10 w-10 object-contain"
+            /><span class="hidden sm:block">Brijmohan Munjal Vedic Kendra</span>
           </div>
           <div class="hidden md:flex space-x-8">
             <a
@@ -103,10 +107,10 @@
     <!-- Hero Section -->
     <section
       id="home"
-      class="min-h-screen flex items-center justify-center relative overflow-hidden"
+      class="min-h-screen flex flex-col sm:flex items-center justify-center relative overflow-hidden"
     >
       <!-- Background Image Carousel -->
-      <div class="hero-bg-carousel">
+      <div class="hero-bg-carousel w-full h-[280px] sm:h-full sm:w-full">
         <div class="hero-bg-slide active"></div>
         <div class="hero-bg-slide"></div>
         <div class="hero-bg-slide"></div>
@@ -114,12 +118,16 @@
         <div class="hero-bg-slide"></div>
       </div>
       <div
-        class="container mx-auto px-6 text-center relative z-10 pt-20 sm:pt-2"
+        class="container mx-auto px-1 z-10 sm:px-6 text-center pt-0 sm:pt-20"
       >
         <div class="animate-slide-up">
-          <div class="bg-black bg-opacity-50 rounded-2xl p-6">
-            <div class="text-6xl md:text-8xl mb-6 gold-accent hidden sm:block">
-              <i class="fas fa-building"></i>
+          <div class="bg-black bg-opacity-50 sm:bg-opacity-50 rounded-2xl p-6">
+            <div class="mb-6">
+              <img
+                src="/images/logos/bmvk.png"
+                alt="Brijmohan Munjal Vedic Kendra logo"
+                class="h-24 w-24 sm:h-44 sm:w-44 object-contain mx-auto"
+              />
             </div>
             <h1
               class="text-4xl md:text-6xl font-bold mb-6 text-white elegant-font"
@@ -160,16 +168,10 @@
           </div>
         </div>
       </div>
-
-      <div
-        class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce"
-      >
-        <i class="fas fa-chevron-down text-2xl opacity-70 text-gold"></i>
-      </div>
     </section>
 
     <!-- Gallery Carousel Section -->
-    <section id="gallery" class="py-12 relative">
+    <section id="gallery" class="py-0 sm:py-12 relative">
       <div class="container mx-auto px-6">
         <div class="text-center mb-16 animate-slide-up">
           <h2
@@ -373,7 +375,7 @@
       </div>
     </section>
     <!-- Services Section -->
-    <section id="services" class="py-12 relative hidden sm:block">
+    <section id="services" class="py-0 sm:py-12 relative hidden sm:block">
       <div class="container mx-auto px-6">
         <div class="text-center mb-16 animate-slide-up">
           <h2
@@ -591,7 +593,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-12 relative">
+    <section id="about" class="py-0 sm:py-12 relative">
       <div class="container mx-auto px-6">
         <div class="lg:grid lg:grid-cols-2 gap-16 items-center">
           <div class="animate-slide-up">
@@ -692,7 +694,7 @@
     </section>
 
     <!-- Booking Information Section -->
-    <section class="py-12 relative hidden sm:block">
+    <section class="py-0 sm:py-12 relative hidden sm:block">
       <div class="container mx-auto px-6">
         <div class="text-center mb-16 animate-slide-up">
           <h2
@@ -781,7 +783,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-12 relative">
+    <section id="contact" class="py-0 sm:py-12 relative">
       <div class="container mx-auto px-6">
         <div class="text-center mb-16 animate-slide-up">
           <h2
@@ -984,7 +986,7 @@
               </div>
               <button
                 type="submit"
-                class="w-full glass px-8 py-4 rounded-xl hover-glow transition-all duration-300 font-semibold"
+                class="w-full glass px-8 py-4 rounded-xl bg-green-500 hover-glow transition-all duration-300 font-semibold text-white hover:bg-green-800"
               >
                 <i class="fas fa-calendar-check mr-2"></i>Request Booking
               </button>
@@ -998,9 +1000,14 @@
     <footer class="py-12 glass-dark">
       <div class="container mx-auto px-6">
         <div class="text-center">
-          <div class="text-2xl font-bold mb-4 text-gray-800 elegant-font">
-            <i class="fas fa-building gold-accent mr-2"></i>Brijmohan Munjal
-            Vedic Kendra Auditorium
+          <div
+            class="flex justify-center items-center gap-2 text-l sm:text-2xl font-bold mb-4 text-gray-800 elegant-font"
+          >
+            <img
+              src="/images/logos/bmvk.png"
+              alt="Brijmohan Munjal Vedic Kendra logo"
+              class="h-10 w-10 object-contain"
+            /><span>Brijmohan Munjal Vedic Kendra</span>
           </div>
           <p class="opacity-80 mb-6 elegant-font text-gray-600">
             Making Every Occasion Memorable Since 2023

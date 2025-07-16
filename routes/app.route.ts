@@ -1,7 +1,6 @@
 import express, { Router, Request, Response } from "express";
 import path from "path";
 import { handleBooking } from "../controllers/emailController";
-import { storeBooking } from "../controllers/storeInDb";
 const router: Router = express.Router();
 
 router.get("/", (req: Request, res: Response) => {
@@ -42,7 +41,7 @@ router.post("/submit", async (req, res) => {
   }
 
   try {
-    await Promise.all([handleBooking(req.body), storeBooking(req.body)]);
+    await Promise.all([handleBooking(req.body)]);
     res.status(200).json({ success: true, redirect: "/thankyou" });
   } catch (err) {
     console.error(err);
