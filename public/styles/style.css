@@ -281,7 +281,7 @@ section {
 }
 
 .hero-bg-carousel {
-  top: 0;
+  top: 72px;
   left: 0;
   width: 100%;
   height: 100%;
@@ -290,7 +290,7 @@ section {
 
 .hero-bg-slide {
   position: absolute;
-  top: 0;
+  top: 72px;
   left: 0;
   width: 100%;
   height: 100%;
