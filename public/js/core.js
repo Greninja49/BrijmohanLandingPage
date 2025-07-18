@@ -224,19 +224,19 @@ function handleSwipe() {
 
 const galleryData = {
   0: {
-    main: "/images/eventgallery/auditorium/audi4.jpg",
+    main: "/images/eventgallery/auditorium/audi1.jpg",
     thumbs: [
-      "/images/eventgallery/auditorium/audi4.jpg",
       "/images/eventgallery/auditorium/audi1.jpg",
+      "/images/eventgallery/auditorium/audi4.jpg",
       "/images/eventgallery/auditorium/audi2.jpg",
       "/images/eventgallery/auditorium/audi3.jpg",
     ],
   },
   1: {
-    main: "/images/eventgallery/confrence/con3.jpg",
+    main: "/images/eventgallery/confrence/con2.jpg",
     thumbs: [
-      "/images/eventgallery/confrence/con3.jpg",
       "/images/eventgallery/confrence/con2.jpg",
+      "/images/eventgallery/confrence/con3.jpg",
       "/images/eventgallery/confrence/con1.jpg",
       "/images/eventgallery/confrence/con4.jpg",
     ],

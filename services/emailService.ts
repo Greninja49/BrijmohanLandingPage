@@ -19,7 +19,6 @@ export async function sendEmail(booking: BookingData) {
       <h3>New Booking Request</h3>
       <p><strong>Name:</strong> ${booking.name}</p>
       <p><strong>Phone:</strong> ${booking.phone}</p>
-      <p><strong>Email:</strong> ${booking.email}</p>
       <p><strong>Event Type:</strong> ${booking.eventType}</p>
       <p><strong>Event Date:</strong> ${booking.eventDate}</p>
       <p><strong>Guest Count:</strong> ${booking.guestCount}</p>

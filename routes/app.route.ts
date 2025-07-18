@@ -12,7 +12,7 @@ router.get("/thankyou", (req: Request, res: Response) => {
 });
 
 router.post("/submit", async (req, res) => {
-  const { name, phone, email, eventDate, guestCount } = req.body;
+  const { name, phone, eventDate, guestCount } = req.body;
 
   const errors: Record<string, string> = {};
 
@@ -22,10 +22,6 @@ router.post("/submit", async (req, res) => {
 
   if (!/^\d{10}$/.test(phone)) {
     errors.phone = "Phone must be a valid 10-digit number.";
-  }
-
-  if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
-    errors.email = "Email is invalid.";
   }
 
   if (!eventDate) {
