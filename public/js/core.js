@@ -105,7 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const payload = {
       name: formData.get("name").trim(),
       phone: formData.get("phone").trim(),
-      email: formData.get("email").trim(),
       eventType: formData.get("eventType"),
       eventDate: formData.get("eventDate"),
       guestCount: formData.get("guestCount").trim(),

@@ -31,6 +31,25 @@
   border: 1px solid rgba(255, 215, 0, 0.2);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
+.glass-whatsapp {
+  background: rgb(30, 214, 37);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+.glass-instagram {
+  background: linear-gradient(
+    45deg,
+    #feda75,
+    #fa7e1e,
+    #d62976,
+    #962fbf,
+    #4f5bd5
+  );
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
 
 .glass-dark {
   background: rgba(75, 85, 99, 0.1);
